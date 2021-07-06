@@ -1,6 +1,11 @@
 import Link from "next/link";
-import { withSession } from "../middlewares/session";
 import { useRouter } from "next/router";
+// import { withSession } from "../middlewares/session";
+
+import Banners from "../components/shop/Banners";
+import LayoutOne from "../components/layouts/LayoutOne";
+import ShopLayout from "../components/shop/ShopLayout";
+import useProductData from "../common/useProductData";
 
 const Home = ({ user }) => {
   const router = useRouter();
@@ -19,38 +24,19 @@ const Home = ({ user }) => {
   };
 
   return (
-    <div>
-      <h1>Home</h1>
-      {user ? (
-        <p>
-          Hello {user.user_nicename}, have a nice day ! Maybe you want to{" "}
-          <a href="/api/logout" onClick={onLogout}>
-            logout ?
-          </a>
-        </p>
-      ) : (
-        <p>
-          Hello guest, maybe you want to{" "}
-          <Link href="/login">
-            <a>login ?</a>
-          </Link>
-        </p>
-      )}
-
-      <Link href="/login">
-        <a>Login</a>
-      </Link>
-    </div>
+    <>
+      <LayoutOne title="Stora">
+        <Banners />
+        <ShopLayout
+          fiveColumn
+          shopSidebarResponsive={{ xs: 24, lg: 4 }}
+          shopContentResponsive={{ xs: 24, lg: 20 }}
+          productResponsive={{ xs: 12, sm: 8, md: 6 }}
+          productPerPage={15}
+          // data={[...data]}
+        />
+      </LayoutOne>
+    </>
   );
 };
-
-export const getServerSideProps = withSession((context) => {
-  const { req } = context;
-  return {
-    props: {
-      user: req.session.get("user") || null,
-    },
-  };
-});
-
 export default Home;
