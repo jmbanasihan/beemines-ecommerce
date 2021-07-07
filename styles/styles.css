@@ -737,9 +737,9 @@ template {
 
 .menu-search__form-input .ant-btn {
   height: 2.8125em;
-  background-color: #fff;
+  background-color: #f59e0b;
   border: 0;
-  color: #000;
+  color: #fff;
   border-radius: 0 0.3125em 0.3125em 0;
 }
 

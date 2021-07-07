@@ -87,7 +87,7 @@ const login = ({ user }) => {
             </div>
             <div className="flex-col items-center justify-between">
               <button
-                className="px-4 py-2 rounded-xl text-white inline-block shadow-lg bg-yellow-500 hover:bg-yellow-500 focus:bg-yellow-600 w-full"
+                className="px-4 py-2 rounded-xl text-white inline-block shadow-lg bg-yellow-500 focus:bg-yellow-600 w-full"
                 type="submit"
               >
                 Sign In

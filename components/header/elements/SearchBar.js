@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Select, Button, AutoComplete } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 import { useRouter } from "next/router";
 
@@ -75,8 +76,8 @@ const SearchBarMobile = ({ fillData, placeholder }) => {
               -1
             }
           />
-          <Button onClick={onSearch}>
-            <i className="icon_search" />
+          <Button className="ant-btn" onClick={onSearch}>
+            <SearchOutlined style={{ fontSize: "20px" }} />
           </Button>
         </div>
       </div>

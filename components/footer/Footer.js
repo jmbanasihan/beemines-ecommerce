@@ -51,7 +51,7 @@ const Footer = ({ containerType }) => {
                     <h5 className="footer-title">Information</h5>
                     <ul>
                       {links.information.map((item, index) => (
-                        <li key={index}>
+                        <li className="hover:underline" key={index}>
                           <Link href="#">
                             <a>{item.name}</a>
                           </Link>
@@ -63,7 +63,7 @@ const Footer = ({ containerType }) => {
                     <h5 className="footer-title">My account</h5>
                     <ul>
                       {links.account.map((item, index) => (
-                        <li key={index}>
+                        <li className="hover:underline" key={index}>
                           <Link href="#">
                             <a>{item.name}</a>
                           </Link>
