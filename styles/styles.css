@@ -1754,7 +1754,7 @@ template {
 
 .footer-top-item.-col-one a img {
   height: 100%;
-  width: 110px;
+  width: 180px;
   -o-object-fit: contain;
      object-fit: contain;
 }

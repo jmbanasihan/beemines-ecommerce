@@ -46,7 +46,7 @@
           display: inline-block;
           margin-bottom: emCal(16, 40);
           img {
-            @include imgCenter($width: 110px, $type: contain);
+            @include imgCenter($width: 180px, $type: contain);
           }
         }
         p {

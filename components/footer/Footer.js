@@ -31,16 +31,17 @@ const Footer = ({ containerType }) => {
                   <a>
                     <img
                       src={
-                        process.env.PUBLIC_URL + "/assets/images/logo-dark.png"
+                        process.env.PUBLIC_URL +
+                        "/assets/images/beemines-dark.png"
                       }
                       alt="Logo"
                     />
                   </a>
                 </Link>
-                <p>7176 Blue Spring Lane Santa Monica, CA 90403</p>
+                <p>GF Tower 3 Uptown Mall Bonifacio Global City, 1634 Taguig</p>
                 <ul>
-                  <li>hi.avitex@gmail.com</li>
-                  <li>+01 123 456 888</li>
+                  <li>beemines@gmail.com</li>
+                  <li>+63-28058656</li>
                 </ul>
               </div>
             </Col>

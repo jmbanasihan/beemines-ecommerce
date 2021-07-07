@@ -29,7 +29,7 @@ const ShopSidebar = ({ categories }) => {
       <h5>Category</h5>
       <div className="shop-sidebar__subcategory">
         <ul>
-          <li>
+          <li className="-ml-3">
             <Link href="">
               <a
                 onClick={(e) => {
@@ -38,7 +38,7 @@ const ShopSidebar = ({ categories }) => {
                 }}
               >
                 <i className="icon_document_alt" />
-                All Category
+                All
               </a>
             </Link>
           </li>
@@ -49,7 +49,79 @@ const ShopSidebar = ({ categories }) => {
                   e.preventDefault();
                 }}
               >
-                Sweater
+                Tops
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Bottoms
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Dresses
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Jackets
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Hoodies
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Blazers
+                <i />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="#">
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                Cardigans
                 <i />
               </a>
             </Link>
@@ -60,7 +132,35 @@ const ShopSidebar = ({ categories }) => {
         <Select defaultValue="all" style={{ width: "100%" }}>
           <Option value="all">
             <i className="icon_document_alt" />
-            All Category
+            All
+          </Option>
+          <Option value="tops">
+            <i className="icon_document_alt" />
+            Tops
+          </Option>
+          <Option value="bottoms">
+            <i className="icon_document_alt" />
+            Bottoms
+          </Option>
+          <Option value="dresses">
+            <i className="icon_document_alt" />
+            Dresses
+          </Option>
+          <Option value="jackets">
+            <i className="icon_document_alt" />
+            Jackets
+          </Option>
+          <Option value="hoodies">
+            <i className="icon_document_alt" />
+            Hoodies
+          </Option>
+          <Option value="blazers">
+            <i className="icon_document_alt" />
+            Blazers
+          </Option>
+          <Option value="cardigans">
+            <i className="icon_document_alt" />
+            Cardigans
           </Option>
 
           <Option>
