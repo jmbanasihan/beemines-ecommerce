@@ -177,11 +177,6 @@
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.1.tgz#66d25f6441920bd5c2146ea27fd33995885452dd"
   integrity sha512-uikw2gKCmqnvjVxitecWfFLMOKyL9BTFcU4VM3hHj9OMwpkCr5Ke+MRMyY2/aQVmsYs4VTq7NCFX05MYwAHi3g==
 
-"@icon/elegant-icons@^0.0.1-alpha.4":
-  version "0.0.1-alpha.4"
-  resolved "https://registry.yarnpkg.com/@icon/elegant-icons/-/elegant-icons-0.0.1-alpha.4.tgz#eb3ddbd9d4e8d8ff1c900088e3c85680d6dbf42b"
-  integrity sha512-D9+WZdWppJNi1cTG2M5Zkmxxs5zEwDJXGdE2l754rTvH25n6DmXVSjgYnvbfYmb10a2OuStmKLvG5Je/mbzx3g==
-
 "@next/env@11.0.0":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-11.0.0.tgz#bdd306a45e88ba3e4e7a36aa91806f6486bb61d0"

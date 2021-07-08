@@ -55,6 +55,7 @@ function ShopContentProduct({
     setPage(page);
     setOffset(offset);
   };
+
   return (
     <div className="shop-content__product">
       {!currentData ? (
@@ -97,4 +98,14 @@ function ShopContentProduct({
   );
 }
 
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(
+    "https://beeminesapi-ml.stackstaging.com/wp-json/wc/v3/products"
+  );
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
+}
 export default React.memo(ShopContentProduct);
