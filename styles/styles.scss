@@ -31,3 +31,33 @@
 
 @import "pages/checkout-complete";
 @import "pages/checkout";
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-button {
+  background: #f59e0b;
+  border: 1px solid rgb(119, 116, 116);
+  height: 2rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #d97706;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  background: #f59e0b;
+}
