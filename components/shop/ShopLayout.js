@@ -11,7 +11,7 @@ function ShopLayout({
   shopContentResponsive,
   productResponsive,
   fiveColumn,
-  data,
+  products,
   productPerPage,
   productStyle,
   containerType,
@@ -29,7 +29,7 @@ function ShopLayout({
               productPerPage={productPerPage}
               fiveColumn={fiveColumn}
               productResponsive={productResponsive}
-              data={data}
+              products={products}
             />
           </Col>
         </Row>

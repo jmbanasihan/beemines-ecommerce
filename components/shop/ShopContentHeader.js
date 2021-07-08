@@ -1,7 +1,7 @@
 import { Select } from "antd";
 import React from "react";
 
-function ShopContentHeader({ data, productPerPage }) {
+function ShopContentHeader({ products, page, productPerPage }) {
   const { Option } = Select;
   // const dispatch = useDispatch();
   // const shopState = useSelector((state) => state.shopReducer);
@@ -12,7 +12,7 @@ function ShopContentHeader({ data, productPerPage }) {
     <div className="shop-content__header">
       <div className="shop-content__header-showing">
         <h5>
-          Showing 1 - {15} of {86} Products
+          Showing {page > 1 ? ((page-1) * productPerPage) + 1 : page } - {productPerPage < products.length ? page * productPerPage : products.length} of {products.length} Products
         </h5>
       </div>
       <div className="shop-content__header-filter">

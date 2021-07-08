@@ -12,14 +12,15 @@ import React, { useState, useEffect } from "react";
 function ShopContentProduct({
   productResponsive,
   fiveColumn,
-  data,
+  products,
   productPerPage,
   productStyle,
+  page,
+  setPage,
 }) {
   // const shopState = useSelector((state) => state.shopReducer);
   // const globalState = useSelector((state) => state.globalReducer);
-  const [currentData, setCurrentData] = useState();
-  const [page, setPage] = useState(1);
+  // const [currentData, setCurrentData] = useState();
   const [offset, setOffset] = useState(0);
   // useEffect(() => {
   //   let filteredProduct = getProductsByFilter(
@@ -58,39 +59,33 @@ function ShopContentProduct({
 
   return (
     <div className="shop-content__product">
-      {!currentData ? (
+      {(!products || !products.length) ? (
         <Empty description="No products in this category" />
       ) : (
         <>
-          {currentData.length > 0 ? (
-            <>
-              <Row gutter={[{ xs: 5, sm: 5, xl: 15, xxl: 30 }, 30]}>
-                {currentData
-                  .slice(offset, offset + productPerPage)
-                  .map((product, index) => (
-                    <Col
-                      key={index}
-                      className={classNames({ "five-col": fiveColumn })}
-                      {...productResponsive}
-                    >
-                      <Product data={product} productStyle={productStyle} />
-                    </Col>
-                  ))}
-              </Row>
-              {currentData.length >= productPerPage && (
-                <Pagination
-                  classNames="shop-content__product-pagination"
-                  defaultCurrent={1}
-                  current={page}
-                  total={currentData.length}
-                  pageSize={productPerPage}
-                  itemRender={itemRender}
-                  onChange={(page, pageSize) => onChangeOffset(page, pageSize)}
-                />
-              )}
-            </>
-          ) : (
-            <Empty />
+          <Row gutter={[{ xs: 5, sm: 5, xl: 15, xxl: 30 }, 30]}>
+            {products
+              .slice(offset, offset + productPerPage)
+              .map((product, index) => (
+                <Col
+                  key={index}
+                  className={classNames({ "five-col": fiveColumn })}
+                  {...productResponsive}
+                >
+                  <Product data={product} productStyle={productStyle} />
+                </Col>
+              ))}
+          </Row>
+          {products.length >= productPerPage && (
+            <Pagination
+              classNames="shop-content__product-pagination"
+              defaultCurrent={1}
+              current={page}
+              total={products.length}
+              pageSize={productPerPage}
+              itemRender={itemRender}
+              onChange={(page, pageSize) => onChangeOffset(page, pageSize)}
+            />
           )}
         </>
       )}
@@ -98,14 +93,4 @@ function ShopContentProduct({
   );
 }
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(
-    "https://beeminesapi-ml.stackstaging.com/wp-json/wc/v3/products"
-  );
-  const data = await res.json();
-
-  // Pass data to the page via props
-  return { props: { data } };
-}
 export default React.memo(ShopContentProduct);

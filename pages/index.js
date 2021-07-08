@@ -7,7 +7,7 @@ import LayoutOne from "../components/layouts/LayoutOne";
 import ShopLayout from "../components/shop/ShopLayout";
 import useProductData from "../common/useProductData";
 
-const Home = ({ user }) => {
+const Home = ({ products }) => {
   const router = useRouter();
 
   const onLogout = async (e) => {
@@ -33,6 +33,7 @@ const Home = ({ user }) => {
           shopContentResponsive={{ xs: 24, lg: 20 }}
           productResponsive={{ xs: 12, sm: 8, md: 6 }}
           productPerPage={15}
+          products={products}
           // data={[...data]}
         />
       </LayoutOne>
@@ -40,3 +41,18 @@ const Home = ({ user }) => {
   );
 };
 export default Home;
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const oauth = new URLSearchParams({
+    consumer_key: 'ck_a8506574f7e45478a231fd5b44ae04e4ab8124dd',
+    consumer_secret: 'cs_3ee1fae59534719e4dda214ffa5ca0c64f6cba04',
+  });
+  const res = await fetch(
+    `https://beeminesapi-ml.stackstaging.com/wp-json/wc/v3/products?${oauth.toString()}`
+  );
+  const products = await res.json();
+
+  // Pass data to the page via props
+  return { props: { products } };
+}
