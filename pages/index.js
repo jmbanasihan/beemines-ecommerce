@@ -45,14 +45,14 @@ export default Home;
 export async function getServerSideProps() {
   // Fetch data from external API
   const oauth = new URLSearchParams({
-    consumer_key: 'ck_a8506574f7e45478a231fd5b44ae04e4ab8124dd',
-    consumer_secret: 'cs_3ee1fae59534719e4dda214ffa5ca0c64f6cba04',
+    consumer_key: "ck_a8506574f7e45478a231fd5b44ae04e4ab8124dd",
+    consumer_secret: "cs_3ee1fae59534719e4dda214ffa5ca0c64f6cba04",
   });
   const res = await fetch(
     `https://beeminesapi-ml.stackstaging.com/wp-json/wc/v3/products?${oauth.toString()}`
   );
   const products = await res.json();
-
+  // console.log(`i am from line 55 of index.js, ${products}`);
   // Pass data to the page via props
   return { props: { products } };
 }

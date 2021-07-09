@@ -3,6 +3,8 @@ import Link from "next/link";
 import classNames from "classnames";
 import { Rate, Button, Tooltip, Skeleton, message, Modal, Spin } from "antd";
 
+import { ShoppingCartOutlined } from "@ant-design/icons";
+
 import { formatCurrency } from "../../common/utils";
 import {
   checkProductInWishlist,
@@ -16,7 +18,68 @@ import {
 import ShopQuickView from "../shop/ShopQuickView";
 
 function Product({ data, productStyle }) {
-  return <div>products</div>;
+  return (
+    // <div
+    //   style={{
+    //     width: "10rem",
+    //     border: "1px solid gray",
+    //     borderRadius: "5px",
+    //     padding: "1rem",
+    //   }}
+    // >
+    //   <p>{data.name}</p>
+    //   <p>{data.price}</p>
+    //   <img src={data.images[0].src} />
+    // </div>
+    <>
+      <div className="py-6">
+        <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
+          <img className="bg-cover" src={data.images[0].src} />
+          <div className="p-4">
+            <h1 className="text-gray-900 font-bold text-xl">{data.name}</h1>
+
+            <div className="flex item-center mt-2">
+              <svg
+                className="w-5 h-5 fill-current text-yellow-500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+              </svg>
+              <svg
+                className="w-5 h-5 fill-current text-yellow-500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+              </svg>
+              <svg
+                className="w-5 h-5 fill-current text-yellow-500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+              </svg>
+              <svg
+                className="w-5 h-5 fill-current text-gray-500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+              </svg>
+              <svg
+                className="w-5 h-5 fill-current text-gray-500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+              </svg>
+            </div>
+            <div className="flex item-center justify-between mt-3">
+              <h1 className="text-gray-700 font-bold text-xl">${data.price}</h1>
+
+              <ShoppingCartOutlined style={{ fontSize: "25px" }} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
   // const dispatch = useDispatch();
   // const [visible, setVisible] = useState(false);
   // const [imageLoading, setImageLoading] = useState(true);
@@ -255,7 +318,6 @@ function Product({ data, productStyle }) {
   //   </>
   // ) : (
   //   <Skeleton active />
-  // );
 }
 
 export default React.memo(Product);

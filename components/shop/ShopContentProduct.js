@@ -8,11 +8,12 @@ import {
   getProductsBySearch,
 } from "../../common/shopUtils";
 import React, { useState, useEffect } from "react";
+// import products from "../../data/product.json";
 
 function ShopContentProduct({
   productResponsive,
   fiveColumn,
-  products,
+  // products,
   productPerPage,
   productStyle,
   page,
@@ -22,6 +23,25 @@ function ShopContentProduct({
   // const globalState = useSelector((state) => state.globalReducer);
   // const [currentData, setCurrentData] = useState();
   const [offset, setOffset] = useState(0);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const res = await fetch(
+        "https://beeminesapi-ml.stackstaging.com/wp-json/wc/v3/products?consumer_key=ck_7c3f44352e6efec25bfcafd42b76f9ab3372d17d&consumer_secret=cs_c35b753b93f5bcee5ec9374fc694ff5c3c69fc90"
+      );
+
+      const data = await res.json();
+
+      setProducts(data);
+    };
+
+    getProducts();
+  }, []);
+
+  console.log("Products", products);
+
   // useEffect(() => {
   //   let filteredProduct = getProductsByFilter(
   //     [...data],
@@ -59,7 +79,7 @@ function ShopContentProduct({
 
   return (
     <div className="shop-content__product">
-      {(!products || !products.length) ? (
+      {!products || !products.length ? (
         <Empty description="No products in this category" />
       ) : (
         <>
